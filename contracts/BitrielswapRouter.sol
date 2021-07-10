@@ -2,7 +2,7 @@
 pragma solidity >=0.7.6;
 pragma abicoder v2;
 
-import '@openzeppelin/contracts/utils/SafeCast.sol';
+import 'dev-bitrielswap-core/contracts/libraries/SafeCast.sol';
 import 'dev-bitrielswap-core/contracts/interfaces/IBitrielPool.sol';
 import 'dev-bitrielswap-core/contracts/libraries/TickMath.sol';
 
@@ -11,7 +11,7 @@ import './base/PeripheryImmutableState.sol';
 import './base/PeripheryValidation.sol';
 import './base/PeripheryPaymentsWithFee.sol';
 import './base/SelfPermit.sol';
-import './interfaces/IBitrielswapRouter.sol';
+import './interfaces/IBitrielSwapRouter.sol';
 import './interfaces/external/IWETH9.sol';
 import './libraries/Path.sol';
 import './libraries/PoolAddress.sol';
@@ -19,8 +19,8 @@ import './libraries/CallbackValidation.sol';
 
 /// @title BitrielSwap Router
 /// @notice Router for stateless execution of swaps against BitrielSwap
-contract BitrielswapRouter is
-    IBitrielswapRouter,
+contract BitrielSwapRouter is
+    IBitrielSwapRouter,
     PeripheryImmutableState,
     PeripheryValidation,
     PeripheryPaymentsWithFee,
@@ -111,7 +111,7 @@ contract BitrielswapRouter is
         return uint256(-(zeroForOne ? amount1 : amount0));
     }
 
-    /// @inheritdoc IBitrielswapRouter
+    /// @inheritdoc IBitrielSwapRouter
     function exactInputSingle(ExactInputSingleParams calldata params)
         external
         payable
@@ -128,7 +128,7 @@ contract BitrielswapRouter is
         require(amountOut >= params.amountOutMinimum, 'Too little received');
     }
 
-    /// @inheritdoc IBitrielswapRouter
+    /// @inheritdoc IBitrielSwapRouter
     function exactInput(ExactInputParams memory params)
         external
         payable
@@ -199,7 +199,7 @@ contract BitrielswapRouter is
         if (sqrtPriceLimitX96 == 0) require(amountOutReceived == amountOut);
     }
 
-    /// @inheritdoc IBitrielswapRouter
+    /// @inheritdoc IBitrielSwapRouter
     function exactOutputSingle(ExactOutputSingleParams calldata params)
         external
         payable
@@ -220,7 +220,7 @@ contract BitrielswapRouter is
         amountInCached = DEFAULT_AMOUNT_IN_CACHED;
     }
 
-    /// @inheritdoc IBitrielswapRouter
+    /// @inheritdoc IBitrielSwapRouter
     function exactOutput(ExactOutputParams calldata params)
         external
         payable

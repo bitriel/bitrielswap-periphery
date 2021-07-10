@@ -2,15 +2,12 @@
 pragma solidity >=0.7.6;
 
 import '@openzeppelin/contracts/token/ERC20/IERC20.sol';
-import '@openzeppelin/contracts/token/ERC20/SafeERC20.sol';
+import './PeripheryImmutableState.sol';
 import '../interfaces/IPeripheryPayments.sol';
 import '../interfaces/external/IWETH9.sol';
 import '../libraries/TransferHelper.sol';
-import './PeripheryImmutableState.sol';
 
 abstract contract PeripheryPayments is IPeripheryPayments, PeripheryImmutableState {
-    using SafeERC20 for IERC20;
-
     receive() external payable {
         require(msg.sender == WETH9, 'Not WETH9');
     }
@@ -36,7 +33,7 @@ abstract contract PeripheryPayments is IPeripheryPayments, PeripheryImmutableSta
         require(balanceToken >= amountMinimum, 'Insufficient token');
 
         if (balanceToken > 0) {
-            IERC20(token).safeTransfer(recipient, balanceToken);
+            TransferHelper.safeTransfer(token, recipient, balanceToken);
         }
     }
 
@@ -61,10 +58,10 @@ abstract contract PeripheryPayments is IPeripheryPayments, PeripheryImmutableSta
             IWETH9(WETH9).transfer(recipient, value);
         } else if (payer == address(this)) {
             // pay with tokens already in the contract (for the exact input multihop case)
-            IERC20(token).safeTransfer(recipient, value);
+            TransferHelper.safeTransfer(token, recipient, value);
         } else {
             // pull payment
-            IERC20(token).safeTransferFrom(payer, recipient, value);
+            TransferHelper.safeTransferFrom(token, payer, recipient, value);
         }
     }
 }

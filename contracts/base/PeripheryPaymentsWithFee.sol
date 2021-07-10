@@ -2,17 +2,15 @@
 pragma solidity >=0.7.6;
 
 import '@openzeppelin/contracts/token/ERC20/IERC20.sol';
-import '@openzeppelin/contracts/token/ERC20/SafeERC20.sol';
 import 'dev-bitrielswap-core/contracts/libraries/LowGasSafeMath.sol';
 
+import './PeripheryPayments.sol';
 import '../interfaces/IPeripheryPaymentsWithFee.sol';
 import '../interfaces/external/IWETH9.sol';
 import '../libraries/TransferHelper.sol';
-import './PeripheryPayments.sol';
 
 abstract contract PeripheryPaymentsWithFee is PeripheryPayments, IPeripheryPaymentsWithFee {
     using LowGasSafeMath for uint256;
-    using SafeERC20 for IERC20;
 
     /// @inheritdoc IPeripheryPaymentsWithFee
     function unwrapWETH9WithFee(
@@ -49,8 +47,8 @@ abstract contract PeripheryPaymentsWithFee is PeripheryPayments, IPeripheryPayme
 
         if (balanceToken > 0) {
             uint256 feeAmount = balanceToken.mul(feeBips) / 10_000;
-            if (feeAmount > 0) IERC20(token).safeTransfer(feeRecipient, feeAmount);
-            IERC20(token).safeTransfer(recipient, balanceToken - feeAmount);
+            if (feeAmount > 0) TransferHelper.safeTransfer(token, feeRecipient, feeAmount);
+            TransferHelper.safeTransfer(token, recipient, balanceToken - feeAmount);
         }
     }
 }

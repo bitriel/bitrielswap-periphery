@@ -2,7 +2,7 @@
 pragma solidity >=0.7.5;
 pragma abicoder v2;
 
-import '@openzeppelin/contracts/utils/SafeCast.sol';
+import 'dev-bitrielswap-core/contracts/libraries/SafeCast.sol';
 import 'dev-bitrielswap-core/contracts/interfaces/IBitrielPool.sol';
 import 'dev-bitrielswap-core/contracts/interfaces/callback/IBitrielSwapCallback.sol';
 import 'dev-bitrielswap-core/contracts/libraries/TickMath.sol';
