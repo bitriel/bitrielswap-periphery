@@ -1,6 +1,6 @@
 {
   "name": "@bitriel/bitrielswap-periphery",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Periphery smart contract for Bitriel",
   "license": "GPL-2.0-or-later",
   "directories": {
@@ -8,12 +8,11 @@
   },
   "keywords": [
     "bitrielswap",
-    "dex",
     "periphery"
   ],
   "repository": {
     "type": "git",
-    "url": "https://github.com/hangleang/dev-bitrielswap-periphery.git"
+    "url": "https://github.com/bitriel/bitrielswap-periphery.git"
   },
   "files": [
     "contracts/base",
@@ -32,7 +31,7 @@
     "dotenv": "^10.0.0"
   },
   "devDependencies": {
-    "dev-bitrielswap-sdk": "^1.1.2",
+    "@bitriel/bitrielswap-sdk": "^1.0.0",
     "truffle-contract-size": "^2.0.1",
     "truffle-plugin-verify": "^0.5.10"
   },
