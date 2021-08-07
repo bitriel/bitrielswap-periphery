@@ -2,7 +2,7 @@
 pragma solidity >=0.7.6;
 pragma abicoder v2;
 
-import 'dev-bitrielswap-core/contracts/interfaces/IBitrielPool.sol';
+import '@bitriel/bitrielswap-core/contracts/interfaces/IBitrielPool.sol';
 import './interfaces/IERC20Metadata.sol';
 import './interfaces/INonfungiblePositionManager.sol';
 import './interfaces/INonfungibleTokenPositionDescriptor.sol';

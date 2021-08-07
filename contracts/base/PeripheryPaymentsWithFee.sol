@@ -2,7 +2,7 @@
 pragma solidity >=0.7.6;
 
 import '@openzeppelin/contracts/token/ERC20/IERC20.sol';
-import 'dev-bitrielswap-core/contracts/libraries/LowGasSafeMath.sol';
+import '@bitriel/bitrielswap-core/contracts/libraries/LowGasSafeMath.sol';
 
 import './PeripheryPayments.sol';
 import '../interfaces/IPeripheryPaymentsWithFee.sol';

@@ -2,11 +2,11 @@
 pragma solidity >=0.7.5;
 pragma abicoder v2;
 
-import 'dev-bitrielswap-core/contracts/libraries/SafeCast.sol';
-import 'dev-bitrielswap-core/contracts/interfaces/IBitrielPool.sol';
-import 'dev-bitrielswap-core/contracts/interfaces/callback/IBitrielSwapCallback.sol';
-import 'dev-bitrielswap-core/contracts/libraries/TickMath.sol';
-import 'dev-bitrielswap-core/contracts/libraries/TickBitmap.sol';
+import '@bitriel/bitrielswap-core/contracts/libraries/SafeCast.sol';
+import '@bitriel/bitrielswap-core/contracts/interfaces/IBitrielPool.sol';
+import '@bitriel/bitrielswap-core/contracts/interfaces/callback/IBitrielSwapCallback.sol';
+import '@bitriel/bitrielswap-core/contracts/libraries/TickMath.sol';
+import '@bitriel/bitrielswap-core/contracts/libraries/TickBitmap.sol';
 import '../base/PeripheryImmutableState.sol';
 import '../interfaces/IQuoterV2.sol';
 import '../libraries/Path.sol';

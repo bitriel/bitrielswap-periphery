@@ -2,9 +2,9 @@
 pragma solidity >=0.7.6;
 pragma abicoder v2;
 
-import 'dev-bitrielswap-core/contracts/interfaces/IBitrielPool.sol';
-import 'dev-bitrielswap-core/contracts/libraries/FixedPoint128.sol';
-import 'dev-bitrielswap-core/contracts/libraries/FullMath.sol';
+import '@bitriel/bitrielswap-core/contracts/interfaces/IBitrielPool.sol';
+import '@bitriel/bitrielswap-core/contracts/libraries/FixedPoint128.sol';
+import '@bitriel/bitrielswap-core/contracts/libraries/FullMath.sol';
 
 import './base/Multicall.sol';
 import './base/LiquidityManagement.sol';

@@ -1,10 +1,10 @@
 // SPDX-License-Identifier: GPL-2.0-or-later
 pragma solidity >=0.5.0 <0.9.0;
 
-import 'dev-bitrielswap-core/contracts/interfaces/IBitrielPool.sol';
-import 'dev-bitrielswap-core/contracts/libraries/FullMath.sol';
-import 'dev-bitrielswap-core/contracts/libraries/LowGasSafeMath.sol';
-import 'dev-bitrielswap-core/contracts/libraries/TickMath.sol';
+import '@bitriel/bitrielswap-core/contracts/interfaces/IBitrielPool.sol';
+import '@bitriel/bitrielswap-core/contracts/libraries/FullMath.sol';
+import '@bitriel/bitrielswap-core/contracts/libraries/LowGasSafeMath.sol';
+import '@bitriel/bitrielswap-core/contracts/libraries/TickMath.sol';
 
 import './PoolAddress.sol';
 

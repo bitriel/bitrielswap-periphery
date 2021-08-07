@@ -2,7 +2,7 @@
 pragma solidity >=0.7.6;
 pragma abicoder v2;
 
-import 'dev-bitrielswap-core/contracts/libraries/LowGasSafeMath.sol';
+import '@bitriel/bitrielswap-core/contracts/libraries/LowGasSafeMath.sol';
 import '@uniswap/v2-core/contracts/interfaces/IUniswapV2Pair.sol';
 
 import './base/PeripheryImmutableState.sol';

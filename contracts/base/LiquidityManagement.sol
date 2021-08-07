@@ -2,9 +2,9 @@
 pragma solidity >=0.7.6;
 pragma abicoder v2;
 
-import 'dev-bitrielswap-core/contracts/interfaces/IBitrielFactory.sol';
-import 'dev-bitrielswap-core/contracts/interfaces/callback/IBitrielMintCallback.sol';
-import 'dev-bitrielswap-core/contracts/libraries/TickMath.sol';
+import '@bitriel/bitrielswap-core/contracts/interfaces/IBitrielFactory.sol';
+import '@bitriel/bitrielswap-core/contracts/interfaces/callback/IBitrielMintCallback.sol';
+import '@bitriel/bitrielswap-core/contracts/libraries/TickMath.sol';
 import '../libraries/PoolAddress.sol';
 import '../libraries/CallbackValidation.sol';
 import '../libraries/LiquidityAmounts.sol';

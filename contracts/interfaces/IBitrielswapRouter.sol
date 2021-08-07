@@ -2,7 +2,7 @@
 pragma solidity >=0.7.5;
 pragma abicoder v2;
 
-import 'dev-bitrielswap-core/contracts/interfaces/callback/IBitrielSwapCallback.sol';
+import '@bitriel/bitrielswap-core/contracts/interfaces/callback/IBitrielSwapCallback.sol';
 
 /// @title Router token swapping functionality
 /// @notice Functions for swapping tokens via BitrielSwap

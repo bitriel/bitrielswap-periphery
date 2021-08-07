@@ -1,7 +1,7 @@
 // SPDX-License-Identifier: GPL-2.0-or-later
 pragma solidity >=0.7.6;
 
-import 'dev-bitrielswap-core/contracts/interfaces/IBitrielPool.sol';
+import '@bitriel/bitrielswap-core/contracts/interfaces/IBitrielPool.sol';
 import './PoolAddress.sol';
 
 /// @notice Provides validation for callbacks from Bitriel Pools

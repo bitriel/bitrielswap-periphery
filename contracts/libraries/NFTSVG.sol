@@ -2,7 +2,7 @@
 pragma solidity >=0.7.6;
 
 import '@openzeppelin/contracts/utils/Strings.sol';
-import 'dev-bitrielswap-core/contracts/libraries/BitMath.sol';
+import '@bitriel/bitrielswap-core/contracts/libraries/BitMath.sol';
 
 import './Base64.sol';
 

@@ -5,10 +5,10 @@ pragma abicoder v2;
 import '@openzeppelin/contracts/utils/Strings.sol';
 import '@openzeppelin/contracts/math/SafeMath.sol';
 import '@openzeppelin/contracts/math/SignedSafeMath.sol';
-import 'dev-bitrielswap-core/contracts/libraries/FullMath.sol';
-import 'dev-bitrielswap-core/contracts/libraries/FixedPoint96.sol';
-import 'dev-bitrielswap-core/contracts/libraries/TickMath.sol';
-import 'dev-bitrielswap-core/contracts/libraries/BitMath.sol';
+import '@bitriel/bitrielswap-core/contracts/libraries/FullMath.sol';
+import '@bitriel/bitrielswap-core/contracts/libraries/FixedPoint96.sol';
+import '@bitriel/bitrielswap-core/contracts/libraries/TickMath.sol';
+import '@bitriel/bitrielswap-core/contracts/libraries/BitMath.sol';
 
 import './Base64.sol';
 import './HexStrings.sol';
