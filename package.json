@@ -1,6 +1,6 @@
 {
   "name": "@bitriel/bitrielswap-periphery",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "Periphery smart contract for Bitriel",
   "license": "GPL-2.0-or-later",
   "directories": {
@@ -24,14 +24,14 @@
     "node": ">=10"
   },
   "dependencies": {
+    "@bitriel/bitrielswap-core": "^1.0.0",
     "@openzeppelin/contracts": "^3.4.1-solc-0.7-2",
     "@truffle/hdwallet-provider": "^1.4.1",
     "@uniswap/v2-core": "^1.0.1",
-    "@bitriel/bitrielswap-core": "^1.0.0",
     "dotenv": "^10.0.0"
   },
   "devDependencies": {
-    "@bitriel/bitrielswap-sdk": "^1.0.0",
+    "@bitriel/bitrielswap-sdk": "^1.0.1",
     "truffle-contract-size": "^2.0.1",
     "truffle-plugin-verify": "^0.5.10"
   },
