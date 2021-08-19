@@ -6,7 +6,7 @@ const NFTPositionDescriptor = artifacts.require("NonfungibleTokenPositionDescrip
 const NFPositionManager = artifacts.require("NonfungiblePositionManager");
 
 const Quoter = artifacts.require("lens/Quoter.sol");
-const Ticklens = artifacts.require("lens/Ticklens.sol");
+const Ticklens = artifacts.require("lens/TickLens.sol");
 const BitrielSwapInterfaceMulticall = artifacts.require("lens/BitrielSwapInterfaceMulticall.sol");
 
 module.exports = async function (deployer) {
