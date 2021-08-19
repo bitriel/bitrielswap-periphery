@@ -6,7 +6,7 @@ import '@bitriel/bitrielswap-core/contracts/interfaces/callback/IBitrielSwapCall
 
 /// @title Router token swapping functionality
 /// @notice Functions for swapping tokens via BitrielSwap
-interface IBitrielSwapRouter is IBitrielSwapCallback {
+interface IBitrielswapRouter is IBitrielSwapCallback {
     struct ExactInputSingleParams {
         address tokenIn;
         address tokenOut;

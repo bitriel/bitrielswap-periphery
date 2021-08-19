@@ -11,7 +11,7 @@ import './base/PeripheryImmutableState.sol';
 import './base/PeripheryValidation.sol';
 import './base/PeripheryPaymentsWithFee.sol';
 import './base/SelfPermit.sol';
-import './interfaces/IBitrielSwapRouter.sol';
+import './interfaces/IBitrielswapRouter.sol';
 import './interfaces/external/IWETH9.sol';
 import './libraries/Path.sol';
 import './libraries/PoolAddress.sol';
@@ -19,8 +19,8 @@ import './libraries/CallbackValidation.sol';
 
 /// @title BitrielSwap Router
 /// @notice Router for stateless execution of swaps against BitrielSwap
-contract BitrielSwapRouter is
-    IBitrielSwapRouter,
+contract BitrielswapRouter is
+    IBitrielswapRouter,
     PeripheryImmutableState,
     PeripheryValidation,
     PeripheryPaymentsWithFee,
@@ -111,7 +111,7 @@ contract BitrielSwapRouter is
         return uint256(-(zeroForOne ? amount1 : amount0));
     }
 
-    /// @inheritdoc IBitrielSwapRouter
+    /// @inheritdoc IBitrielswapRouter
     function exactInputSingle(ExactInputSingleParams calldata params)
         external
         payable
@@ -128,7 +128,7 @@ contract BitrielSwapRouter is
         require(amountOut >= params.amountOutMinimum, 'Too little received');
     }
 
-    /// @inheritdoc IBitrielSwapRouter
+    /// @inheritdoc IBitrielswapRouter
     function exactInput(ExactInputParams memory params)
         external
         payable
@@ -199,7 +199,7 @@ contract BitrielSwapRouter is
         if (sqrtPriceLimitX96 == 0) require(amountOutReceived == amountOut);
     }
 
-    /// @inheritdoc IBitrielSwapRouter
+    /// @inheritdoc IBitrielswapRouter
     function exactOutputSingle(ExactOutputSingleParams calldata params)
         external
         payable
@@ -220,7 +220,7 @@ contract BitrielSwapRouter is
         amountInCached = DEFAULT_AMOUNT_IN_CACHED;
     }
 
-    /// @inheritdoc IBitrielSwapRouter
+    /// @inheritdoc IBitrielswapRouter
     function exactOutput(ExactOutputParams calldata params)
         external
         payable

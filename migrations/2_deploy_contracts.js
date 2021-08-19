@@ -1,5 +1,5 @@
 const { WNATIVE, FACTORY_ADDRESS } = require('@bitriel/bitrielswap-sdk');
-const BitrielSwapRouter = artifacts.require("BitrielSwapRouter");
+const BitrielswapRouter = artifacts.require("BitrielswapRouter");
 const Migrator = artifacts.require("Migrator");
 const NFTDescriptor = artifacts.require("NFTDescriptor");
 const NFTPositionDescriptor = artifacts.require("NonfungibleTokenPositionDescriptor");
@@ -25,7 +25,7 @@ module.exports = async function (deployer) {
     deployer.deploy(BitrielSwapInterfaceMulticall),
     deployer.deploy(Ticklens),
     deployer.deploy(Quoter, factory, weth),
-    deployer.deploy(BitrielSwapRouter, factory, weth),
+    deployer.deploy(BitrielswapRouter, factory, weth),
   ]);
 
   await deployer.deploy(NFTDescriptor);
