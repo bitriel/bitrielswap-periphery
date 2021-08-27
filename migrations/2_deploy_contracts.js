@@ -1,6 +1,5 @@
 const { WNATIVE, FACTORY_ADDRESS } = require('@bitriel/bitrielswap-sdk');
 const BitrielSwapRouter = artifacts.require("BitrielSwapRouter");
-const Migrator = artifacts.require("Migrator");
 const NFTDescriptor = artifacts.require("NFTDescriptor");
 const NFTPositionDescriptor = artifacts.require("NonfungibleTokenPositionDescriptor");
 const NFPositionManager = artifacts.require("NonfungiblePositionManager");
