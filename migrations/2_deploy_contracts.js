@@ -33,6 +33,5 @@ module.exports = async function (deployer) {
   await deployer.deploy(NFTPositionDescriptor, weth);
   const nftPositionDesc = await NFTPositionDescriptor.deployed();
   await deployer.deploy(NFPositionManager, factory, weth, nftPositionDesc.address);
-  const nftPosManager = await NFPositionManager.deployed();
-  await deployer.deploy(Migrator, factory, weth, nftPosManager.address);
+  await NFPositionManager.deployed();
 };
