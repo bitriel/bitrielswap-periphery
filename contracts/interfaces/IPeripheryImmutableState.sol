@@ -7,6 +7,6 @@ interface IPeripheryImmutableState {
     /// @return Returns the address of the Bitriel factory
     function factory() external view returns (address);
 
-    /// @return Returns the address of WETH9
-    function WETH9() external view returns (address);
+    /// @return Returns the address of WNATIVE
+    function WNATIVE() external view returns (address);
 }

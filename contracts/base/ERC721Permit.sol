@@ -3,13 +3,15 @@ pragma solidity >=0.7.6;
 
 import '@openzeppelin/contracts/token/ERC721/ERC721.sol';
 import '@openzeppelin/contracts/utils/Address.sol';
+
 import '../libraries/ChainId.sol';
 import '../interfaces/external/IERC1271.sol';
 import '../interfaces/IERC721Permit.sol';
+import './BlockTimestamp.sol';
 
 /// @title ERC721 with permit
 /// @notice Nonfungible tokens that support an approve via signature, i.e. permit
-abstract contract ERC721Permit is ERC721, IERC721Permit {
+abstract contract ERC721Permit is BlockTimestamp, ERC721, IERC721Permit {
     /// @dev Gets the current nonce for a token ID and then increments it, returning the original value
     function _getAndIncrementNonce(uint256 tokenId) internal virtual returns (uint256);
     
@@ -58,7 +60,7 @@ abstract contract ERC721Permit is ERC721, IERC721Permit {
         bytes32 r,
         bytes32 s
     ) external payable override {
-        require(block.timestamp <= deadline, 'Permit expired');
+        require(_blockTimestamp() <= deadline, 'Permit expired');
 
         bytes32 digest =
             keccak256(

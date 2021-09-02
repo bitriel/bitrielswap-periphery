@@ -71,9 +71,9 @@ contract NonfungiblePositionManager is
 
     constructor(
         address _factory,
-        address _WETH9,
+        address _WNATIVE,
         address _tokenDescriptor_
-    ) ERC721Permit('BitrielSwap NFT-LP', 'BTR-LP', '1') PeripheryImmutableState(_factory, _WETH9) {
+    ) ERC721Permit('BitrielSwap NFT-LP', 'BTR-LP', '1') PeripheryImmutableState(_factory, _WNATIVE) {
         _tokenDescriptor = _tokenDescriptor_;
     }
 

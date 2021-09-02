@@ -12,7 +12,7 @@ import './base/PeripheryValidation.sol';
 import './base/PeripheryPaymentsWithFee.sol';
 import './base/SelfPermit.sol';
 import './interfaces/IBitrielSwapRouter.sol';
-import './interfaces/external/IWETH9.sol';
+import './interfaces/external/IWNATIVE.sol';
 import './libraries/Path.sol';
 import './libraries/PoolAddress.sol';
 import './libraries/CallbackValidation.sol';
@@ -37,7 +37,7 @@ contract BitrielSwapRouter is
     /// @dev Transient storage variable used for returning the computed amount in for an exact output swap.
     uint256 private amountInCached = DEFAULT_AMOUNT_IN_CACHED;
 
-    constructor(address _factory, address _WETH9) PeripheryImmutableState(_factory, _WETH9) {}
+    constructor(address _factory, address _WNATIVE) PeripheryImmutableState(_factory, _WNATIVE) {}
 
     /// @dev Returns the pool for the given token pair and fee. The pool contract may or may not exist.
     function getPool(

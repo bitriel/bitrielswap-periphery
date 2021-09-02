@@ -6,14 +6,14 @@ import '@bitriel/bitrielswap-core/contracts/libraries/LowGasSafeMath.sol';
 
 import './PeripheryPayments.sol';
 import '../interfaces/IPeripheryPaymentsWithFee.sol';
-import '../interfaces/external/IWETH9.sol';
+import '../interfaces/external/IWNATIVE.sol';
 import '../libraries/TransferHelper.sol';
 
 abstract contract PeripheryPaymentsWithFee is PeripheryPayments, IPeripheryPaymentsWithFee {
     using LowGasSafeMath for uint256;
 
     /// @inheritdoc IPeripheryPaymentsWithFee
-    function unwrapWETH9WithFee(
+    function unwrapWNATIVEWithFee(
         uint256 amountMinimum,
         address recipient,
         uint256 feeBips,
@@ -21,14 +21,14 @@ abstract contract PeripheryPaymentsWithFee is PeripheryPayments, IPeripheryPayme
     ) public payable override {
         require(feeBips > 0 && feeBips <= 100);
 
-        uint256 balanceWETH9 = IWETH9(WETH9).balanceOf(address(this));
-        require(balanceWETH9 >= amountMinimum, 'Insufficient WETH9');
+        uint256 balanceWNATIVE = IWNATIVE(WNATIVE).balanceOf(address(this));
+        require(balanceWNATIVE >= amountMinimum, 'Insufficient WNATIVE');
 
-        if (balanceWETH9 > 0) {
-            IWETH9(WETH9).withdraw(balanceWETH9);
-            uint256 feeAmount = balanceWETH9.mul(feeBips) / 10_000;
-            if (feeAmount > 0) TransferHelper.safeTransferETH(feeRecipient, feeAmount);
-            TransferHelper.safeTransferETH(recipient, balanceWETH9 - feeAmount);
+        if (balanceWNATIVE > 0) {
+            IWNATIVE(WNATIVE).withdraw(balanceWNATIVE);
+            uint256 feeAmount = balanceWNATIVE.mul(feeBips) / 10_000;
+            if (feeAmount > 0) TransferHelper.safeTransferNative(feeRecipient, feeAmount);
+            TransferHelper.safeTransferNative(recipient, balanceWNATIVE - feeAmount);
         }
     }
 

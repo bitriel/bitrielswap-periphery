@@ -4,22 +4,22 @@ pragma solidity >=0.7.6;
 import '@openzeppelin/contracts/token/ERC20/IERC20.sol';
 import './PeripheryImmutableState.sol';
 import '../interfaces/IPeripheryPayments.sol';
-import '../interfaces/external/IWETH9.sol';
+import '../interfaces/external/IWNATIVE.sol';
 import '../libraries/TransferHelper.sol';
 
 abstract contract PeripheryPayments is IPeripheryPayments, PeripheryImmutableState {
     receive() external payable {
-        require(msg.sender == WETH9, 'Not WETH9');
+        require(msg.sender == WNATIVE, 'Not WNATIVE');
     }
 
     /// @inheritdoc IPeripheryPayments
-    function unwrapWETH9(uint256 amountMinimum, address recipient) external payable override {
-        uint256 balanceWETH9 = IWETH9(WETH9).balanceOf(address(this));
-        require(balanceWETH9 >= amountMinimum, 'Insufficient WETH9');
+    function unwrapWNATIVE(uint256 amountMinimum, address recipient) external payable override {
+        uint256 balanceWNATIVE = IWNATIVE(WNATIVE).balanceOf(address(this));
+        require(balanceWNATIVE >= amountMinimum, 'Insufficient WNATIVE');
 
-        if (balanceWETH9 > 0) {
-            IWETH9(WETH9).withdraw(balanceWETH9);
-            TransferHelper.safeTransferETH(recipient, balanceWETH9);
+        if (balanceWNATIVE > 0) {
+            IWNATIVE(WNATIVE).withdraw(balanceWNATIVE);
+            TransferHelper.safeTransferNative(recipient, balanceWNATIVE);
         }
     }
 
@@ -38,8 +38,8 @@ abstract contract PeripheryPayments is IPeripheryPayments, PeripheryImmutableSta
     }
 
     /// @inheritdoc IPeripheryPayments
-    function refundETH() external payable override {
-        if (address(this).balance > 0) TransferHelper.safeTransferETH(msg.sender, address(this).balance);
+    function refundNative() external payable override {
+        if (address(this).balance > 0) TransferHelper.safeTransferNative(msg.sender, address(this).balance);
     }
 
     /// @param token The token to pay
@@ -52,10 +52,10 @@ abstract contract PeripheryPayments is IPeripheryPayments, PeripheryImmutableSta
         address recipient,
         uint256 value
     ) internal {
-        if (token == WETH9 && address(this).balance >= value) {
-            // pay with WETH9
-            IWETH9(WETH9).deposit{value: value}(); // wrap only what is needed to pay
-            IWETH9(WETH9).transfer(recipient, value);
+        if (token == WNATIVE && address(this).balance >= value) {
+            // pay with WNATIVE
+            IWNATIVE(WNATIVE).deposit{value: value}(); // wrap only what is needed to pay
+            IWNATIVE(WNATIVE).transfer(recipient, value);
         } else if (payer == address(this)) {
             // pay with tokens already in the contract (for the exact input multihop case)
             TransferHelper.safeTransfer(token, recipient, value);

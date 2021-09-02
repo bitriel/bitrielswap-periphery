@@ -20,10 +20,10 @@ contract NonfungibleTokenPositionDescriptor is INonfungibleTokenPositionDescript
     address private constant TBTC = 0x8dAEBADE922dF735c38C80C7eBD708Af50815fAa;
     address private constant WBTC = 0x2260FAC5E5542a773Aa44fBCfeDf7C193bc2C599;
 
-    address public immutable WETH9;
+    address public immutable WNATIVE;
 
-    constructor(address _WETH9) {
-        WETH9 = _WETH9;
+    constructor(address _WNATIVE) {
+        WNATIVE = _WNATIVE;
     }
 
     /// @inheritdoc INonfungibleTokenPositionDescriptor
@@ -55,10 +55,12 @@ contract NonfungibleTokenPositionDescriptor is INonfungibleTokenPositionDescript
                     tokenId: tokenId,
                     quoteTokenAddress: quoteTokenAddress,
                     baseTokenAddress: baseTokenAddress,
-                    quoteTokenSymbol: quoteTokenAddress == WETH9
-                        ? 'ETH'
+                    quoteTokenSymbol: quoteTokenAddress == WNATIVE
+                        ? IERC20Metadata(WNATIVE).symbol()
                         : IERC20Metadata(quoteTokenAddress).symbol(),
-                    baseTokenSymbol: baseTokenAddress == WETH9 ? 'ETH' : IERC20Metadata(baseTokenAddress).symbol(),
+                    baseTokenSymbol: baseTokenAddress == WNATIVE 
+                        ? IERC20Metadata(WNATIVE).symbol() 
+                        : IERC20Metadata(baseTokenAddress).symbol(),
                     quoteTokenDecimals: IERC20Metadata(quoteTokenAddress).decimals(),
                     baseTokenDecimals: IERC20Metadata(baseTokenAddress).decimals(),
                     flipRatio: _flipRatio,
@@ -81,7 +83,7 @@ contract NonfungibleTokenPositionDescriptor is INonfungibleTokenPositionDescript
     }
 
     function tokenRatioPriority(address token, uint256 chainId) public view returns (int256) {
-        if (token == WETH9) {
+        if (token == WNATIVE) {
             return TokenRatioSortOrder.DENOMINATOR;
         }
         if (chainId == 1) {

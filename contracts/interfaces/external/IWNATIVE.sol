@@ -3,12 +3,12 @@ pragma solidity >=0.7.6;
 
 import '@openzeppelin/contracts/token/ERC20/IERC20.sol';
 
-/// @title Interface for WETH9
-interface IWETH9 is IERC20 {
-    /// @notice Deposit ether to get wrapped ether
+/// @title Interface for WNATIVE
+interface IWNATIVE is IERC20 {
+    /// @notice Deposit native token to get wrapped native token
     function deposit() external payable;
 
-    /// @notice Withdraw wrapped ether to get ether
+    /// @notice Withdraw wrapped native token to get native token
     function withdraw(uint) external;
 
     event Deposit(address indexed to, uint amount);
