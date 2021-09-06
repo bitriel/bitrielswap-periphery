@@ -5,6 +5,7 @@ import { ChainId, WNATIVE, FACTORY_ADDRESS } from '@bitriel/bitrielswap-sdk'
 const OLD_FACTORY_MAP: {[chainId in ChainId | number]: string} = {
   [ChainId.MAINNET]: "0x7a250d5630B4cF539739dF2C5dAcb4c659F2488D",
   [ChainId.BSC]: "0xcA143Ce32Fe78f1f7019d7d551a6402fC5350c73",
+  [ChainId.BSC_TESTNET]: "0x927A548cD60c0A4b410c32178A88454A70B22fea"
 }
 
 const deploy: DeployFunction = async (hre: HardhatRuntimeEnvironment) => {
@@ -23,7 +24,7 @@ const deploy: DeployFunction = async (hre: HardhatRuntimeEnvironment) => {
         FACTORY_ADDRESS[chainId], 
         WNATIVE[chainId].address, 
         nft_position_manager.address,
-        "12017800"
+        "12100000"
       ],
       log: true,
       deterministicDeployment: false
