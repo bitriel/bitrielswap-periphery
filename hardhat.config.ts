@@ -7,12 +7,9 @@ import "solidity-coverage"
 import "@nomiclabs/hardhat-etherscan";
 import "@nomiclabs/hardhat-ethers"
 import "hardhat-contract-sizer";
-import "hardhat-abi-exporter"
 import "hardhat-deploy"
 import "hardhat-gas-reporter"
-import "hardhat-spdx-license-identifier"
 import "hardhat-typechain"
-import "hardhat-watcher"
 
 const accounts = {
   mnemonic: process.env.MNEMONIC,
@@ -134,13 +131,6 @@ const config: HardhatUserConfig = {
   mocha: {
     timeout: 20000,
   },
-  abiExporter: {
-    path: "./abi",
-    clear: true,
-    flat: true,
-    // only: [],
-    // except: []
-  },
   gasReporter: {
     coinmarketcap: process.env.COINMARKETCAP_API_KEY,
     currency: "USD",
@@ -152,20 +142,9 @@ const config: HardhatUserConfig = {
     runOnCompile: true,
     disambiguatePaths: false,
   },
-  spdxLicenseIdentifier: {
-    overwrite: false,
-    runOnCompile: true,
-  },
   typechain: {
     outDir: "types",
     target: "ethers-v5",
-  },
-  watcher: {
-    compile: {
-      tasks: ["compile"],
-      files: ["./contracts"],
-      verbose: true,
-    },
   },
 }
 
