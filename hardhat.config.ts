@@ -98,9 +98,7 @@ const config: HardhatUserConfig = {
       accounts,
       chainId: 222,
       live: true,
-      saveDeployments: true,
-      tags: ["staging"],
-      gasMultiplier: 2,
+      saveDeployments: true
     },
   },
   paths: {
