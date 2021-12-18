@@ -330,26 +330,26 @@
     "@babel/helper-validator-identifier" "^7.14.9"
     to-fast-properties "^2.0.0"
 
-"@bitriel/bitrielswap-core@^1.0.0":
-  version "1.0.0"
-  resolved "https://registry.npmjs.org/@bitriel/bitrielswap-core/-/bitrielswap-core-1.0.0.tgz"
-  integrity sha512-XeMWgHc+EVBO6I6jqfjGAZkKCH4CJZ3zDwb7iQKeJp8b9HLDxfVXhBASBpxWfcAUMAvasgA9ttbQGzmIcnw6rQ==
+"@bitriel/bitrielswap-core@^1.0.1":
+  version "1.0.1"
+  resolved "https://registry.yarnpkg.com/@bitriel/bitrielswap-core/-/bitrielswap-core-1.0.1.tgz#143c7fd974b8f81de046869315fa5550802b0650"
+  integrity sha512-XQKpn74f+xmMtTfGQUs0O+iDvfQV4cm0IO86oF2m+6Z/9+lRGksOqX88yb79AE2VqVny29dkpiFn3dzjT26Wcg==
   dependencies:
     "@truffle/hdwallet-provider" "^1.4.1"
     dotenv "^10.0.0"
 
-"@bitriel/bitrielswap-periphery@^1.1.6":
-  version "1.1.6"
-  resolved "https://registry.yarnpkg.com/@bitriel/bitrielswap-periphery/-/bitrielswap-periphery-1.1.6.tgz#efceb88f3cc2bf93a7362d2737fede655d2645e9"
-  integrity sha512-FhS+NkFXeHpNPHC7PNrFkmgOY3nC+P1pFT7brvSgSW19Iv0IR28oZdBAqGCNPY5kKzZiIUe/fQ4jkN56Q+050g==
+"@bitriel/bitrielswap-periphery@^1.1.7":
+  version "1.1.7"
+  resolved "https://registry.yarnpkg.com/@bitriel/bitrielswap-periphery/-/bitrielswap-periphery-1.1.7.tgz#e080d4baad6cebd51f287a9e9272a6381b9df7d9"
+  integrity sha512-JnNOXEEgVYs8F0Pcit7vYvAElDvFBjcUXJ/U8ZkvAQ9kWxgVvzJYolWcL9P5KD4m2aTNe7i98NxsSBXTlXt7/g==
 
-"@bitriel/bitrielswap-sdk@^1.2.1":
-  version "1.2.1"
-  resolved "https://registry.yarnpkg.com/@bitriel/bitrielswap-sdk/-/bitrielswap-sdk-1.2.1.tgz#950a440d8b0e883e5601ca8ba169a0d6e9b91ffb"
-  integrity sha512-wK055SvHINLtAhNBmfEwvdPsgMklVgxsxJh6FELMJLaY831DeuddgUO3daQO+fBKGOm1V8/URyJYt6QNt046hg==
+"@bitriel/bitrielswap-sdk@^1.2.3":
+  version "1.2.3"
+  resolved "https://registry.yarnpkg.com/@bitriel/bitrielswap-sdk/-/bitrielswap-sdk-1.2.3.tgz#9417ec44011faaa5c6ebe72b08f0e81f9d586074"
+  integrity sha512-XwjhJYCmvhLOPPfqBZnQUu3zKwRDnssPiuqkTVsvNdFq4j49RRaTR8fvr30pu7Xjy26RWGNiglO84RA7JB25dA==
   dependencies:
-    "@bitriel/bitrielswap-core" "^1.0.0"
-    "@bitriel/bitrielswap-periphery" "^1.1.6"
+    "@bitriel/bitrielswap-core" "^1.0.1"
+    "@bitriel/bitrielswap-periphery" "^1.1.7"
     "@ethersproject/abi" "^5.0.12"
     "@ethersproject/solidity" "^5.0.9"
     "@uniswap/sdk-core" "^3.0.0-alpha.3"
