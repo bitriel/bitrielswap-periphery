@@ -338,18 +338,18 @@
     "@truffle/hdwallet-provider" "^1.4.1"
     dotenv "^10.0.0"
 
-"@bitriel/bitrielswap-periphery@^1.1.7":
-  version "1.1.7"
-  resolved "https://registry.yarnpkg.com/@bitriel/bitrielswap-periphery/-/bitrielswap-periphery-1.1.7.tgz#e080d4baad6cebd51f287a9e9272a6381b9df7d9"
-  integrity sha512-JnNOXEEgVYs8F0Pcit7vYvAElDvFBjcUXJ/U8ZkvAQ9kWxgVvzJYolWcL9P5KD4m2aTNe7i98NxsSBXTlXt7/g==
+"@bitriel/bitrielswap-periphery@^1.1.8":
+  version "1.1.8"
+  resolved "https://registry.yarnpkg.com/@bitriel/bitrielswap-periphery/-/bitrielswap-periphery-1.1.8.tgz#afb97b4dc0f88bb8867b52a379e7bea152770d25"
+  integrity sha512-FW0q9h+mohK+uOqlyhYoReLeQuL9Nvv5cnxq67WMTtQAb+sv1NsG8s4HrRwDYAZJSGH7jK7D5RWpnSz2Zna8Hw==
 
-"@bitriel/bitrielswap-sdk@^1.2.3":
-  version "1.2.3"
-  resolved "https://registry.yarnpkg.com/@bitriel/bitrielswap-sdk/-/bitrielswap-sdk-1.2.3.tgz#9417ec44011faaa5c6ebe72b08f0e81f9d586074"
-  integrity sha512-XwjhJYCmvhLOPPfqBZnQUu3zKwRDnssPiuqkTVsvNdFq4j49RRaTR8fvr30pu7Xjy26RWGNiglO84RA7JB25dA==
+"@bitriel/bitrielswap-sdk@^1.2.5":
+  version "1.2.5"
+  resolved "https://registry.yarnpkg.com/@bitriel/bitrielswap-sdk/-/bitrielswap-sdk-1.2.5.tgz#c334994aef4ab8299b139422cefb7cbee0e7a7f2"
+  integrity sha512-QEgjbqjld8LlWmD9IVAbI1K9NRt9gW5DcJiYZgSFxHWD/8FKewH9qbE/lIjAM6OWulrQMDFKLzosWpzyeSU8wQ==
   dependencies:
     "@bitriel/bitrielswap-core" "^1.0.1"
-    "@bitriel/bitrielswap-periphery" "^1.1.7"
+    "@bitriel/bitrielswap-periphery" "^1.1.8"
     "@ethersproject/abi" "^5.0.12"
     "@ethersproject/solidity" "^5.0.9"
     "@uniswap/sdk-core" "^3.0.0-alpha.3"
