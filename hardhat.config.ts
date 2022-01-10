@@ -94,7 +94,7 @@ const config: HardhatUserConfig = {
       gasMultiplier: 2,
     },
     "selendra-testnet": {
-      url: "https://apiselendra-testnet.koompi.org/",
+      url: "https://rpc.testnet.selendra.org/",
       accounts,
       chainId: 222,
       live: true,
