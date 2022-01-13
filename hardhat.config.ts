@@ -11,9 +11,7 @@ import "hardhat-deploy"
 import "hardhat-gas-reporter"
 import "hardhat-typechain"
 
-const accounts = {
-  mnemonic: process.env.MNEMONIC,
-}
+const accounts = process.env.PRIVATE_KEY !== undefined ? [process.env.PRIVATE_KEY] : [];
 
 const config: HardhatUserConfig = {
   defaultNetwork: "hardhat",
