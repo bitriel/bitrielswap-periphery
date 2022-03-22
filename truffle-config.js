@@ -60,10 +60,11 @@ module.exports = {
       timeoutBlocks: 200,
     },
     // selendra
-    selendraTestnet: {
-      provider: () => new HDWalletProvider(process.env.PRIVATE_KEY, `https://rpc.testnet.selendra.org/`),
+    indraTest: {
+      provider: () => new HDWalletProvider(process.env.PRIVATE_KEY, `https://indranet-rpc.selendra.org/`),
       network_id: 222,
-      timeoutBlocks: 200,
+      timeoutBlocks: 300,
+      skipDryRun: true
     }
   },
 

@@ -8,7 +8,7 @@ const NFPositionManager = artifacts.require("NonfungiblePositionManager");
 const TickLens = artifacts.require("TickLens");
 
 const NET_TO_CHAIN_ID = new Map([
-  ["selendraTestnet", 222],
+  ["indraTest", 222],
   ["testnet", 97]
 ])
 

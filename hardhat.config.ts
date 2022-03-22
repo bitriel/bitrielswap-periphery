@@ -91,8 +91,8 @@ const config: HardhatUserConfig = {
       tags: ["staging"],
       gasMultiplier: 2,
     },
-    "selendra-testnet": {
-      url: "https://rpc.testnet.selendra.org/",
+    "indra-test": {
+      url: "https://indranet-rpc.selendra.org/",
       accounts,
       chainId: 222,
       live: true,
